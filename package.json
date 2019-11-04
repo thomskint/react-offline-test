@@ -1,11 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "test": "jest **/*.test.js*",
+    "test": "jest --watchAll",
     "start": "webpack-dev-server --hot --progress --colors"
   },
   "dependencies": {
+    "@material-ui/core": "^4.5.1",
+    "chartist": "^0.11.4",
     "react": "^16.9.0",
+    "react-chartist": "^0.13.3",
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
@@ -16,14 +19,23 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.5",
     "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
+    "jest-fetch-mock": "^2.1.2",
     "jest-transform-stub": "^2.0.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "prettier": "1.18.2",
+    "source-map-loader": "^0.2.4",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.6.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"
@@ -37,6 +49,9 @@
     "moduleNameMapper": {
       "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
     },
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
